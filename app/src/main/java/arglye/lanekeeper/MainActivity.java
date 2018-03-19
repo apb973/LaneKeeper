@@ -1,6 +1,8 @@
 package arglye.lanekeeper;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        //-----------------Create Button and set it to start camera stream activity--------
+        Button startCameraStream = (Button) findViewById(R.id.cameraStream);
+        startCameraStream.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent camera = new Intent(MainActivity.this, CameraStreamActivity.class);
+                MainActivity.this.startActivity(camera);
+            }
+        });
+
 
     // Example of a call to a native method
     TextView tv = (TextView) findViewById(R.id.sample_text);
